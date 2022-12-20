@@ -14,11 +14,12 @@ Route.group(() =>{
 }).middleware("auth:api")
 
 Route.post("image", async ({ request }) =>{
-  const image = request.files('images')
-  if(image){
-    await image[0].move(Application.tmpPath('uploads'))
+  const images = request.files('images')
+  for(let image of images){
+    await image.move(Application.tmpPath('uploads'))
     return{
-      msg:"success"
+      msg: "Success"
     }
   }
+
 })
