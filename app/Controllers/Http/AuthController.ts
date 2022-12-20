@@ -10,7 +10,7 @@ export default class AuthController {
                 expiresIn: "10 days"
             })
             response.send({
-                msg: "User Logged In",
+                msg: "Logged In",
                 token: token
             })
         } catch (error) {
