@@ -44,7 +44,7 @@ export default class AuthController {
     public async logout({ auth }){
         await auth.use('api').revoke()
         return{
-            msg: "Logged out",
+            msg: "User Logged out",
             revoked: true
         }
     }
